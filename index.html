@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapTime Photobooth | Jasa Sewa Photobooth Jabodetabek</title>
+    <meta name="description" content="Jasa sewa SnapTime Photobooth murah, interaktif, dan cetak sepuasnya (unlimited) di area Jabodetabek mulai Rp 450Rb/Jam. Bikin acaramu makin seru!">
+    <meta name="keywords" content="photobooth jabodetabek, sewa photobooth, photobooth murah, jasa photobooth, cetak foto unlimited, SnapTime Photobooth, sewa photobooth jakarta, photobooth pernikahan, photobooth event">
+    
+    <style>
+        /* CSS Styles */
+        :root {
+            --gold: #F4B41A;
+            --dark-purple: #311A2E;
+            --light-bg: #FFFDF9;
+            --white: #ffffff;
+            --text-dark: #222222;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--white);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--gold); 
+        }
+
+        .logo span {
+            color: var(--text-dark); 
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-dark);
+            margin-bottom: 5px;
+            border-radius: 2px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--light-bg) 60%, var(--gold) 100%);
+            padding: 100px 30px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--dark-purple);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            background-color: var(--gold);
+            color: var(--white);
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            transition: background 0.3s, transform 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #dca012;
+            transform: translateY(-3px);
+        }
+
+        .story-section {
+            padding: 80px 30px;
+            text-align: center;
+        }
+
+        .story-section h2 {
+            font-size: 2.5rem;
+            color: var(--dark-purple);
+            margin-bottom: 50px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            width: 30%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--gold);
+            transition: transform 0.3s;
+        }
+
+        .pose-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .pose-card {
+            background: var(--dark-purple);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            width: 30%;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pose-card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 80px;
+            height: 80px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+
+        .pose-card h3, .feature-card h3 {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .booking-section {
+            background-color: var(--white);
+            padding: 80px 30px;
+        }
+
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--light-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 2px solid var(--gold);
+        }
+
+        .booking-container h2 {
+            text-align: center;
+            color: var(--dark-purple);
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--text-dark);
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 5px rgba(244, 180, 26, 0.5);
+        }
+
+        footer {
+            background-color: var(--dark-purple);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                padding-bottom: 20px;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                margin: 15px 0 0 0;
+                text-align: center;
+                padding: 10px;
+                width: 100%;
+                border-bottom: 1px solid #eee;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .feature-card, .pose-card {
+                width: 100%;
+            }
+
+            .booking-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Snap<span>Time</span></div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="nav-menu">
+            <a href="#cerita" class="nav-link">Layanan Kami</a>
+            <a href="#pose" class="nav-link">Pilihan Pose</a>
+            <a href="#booking" class="nav-link">Pesan Sekarang</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Momen Indah Kini <span>Abadi</span></h1>
+        <p>Sambut kehadiran SnapTime Photobooth. Jangan biarkan momentum berlalu tanpa jejak memori cetak. Bikin acaramu makin seru bersama kami!</p>
+        <a href="#booking" class="btn">Amankan Tanggal Acaramu</a>
+    </section>
+
+    <section class="story-section" id="cerita">
+        <h2>Solusi Event Terbaik Anda</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3>Cetak Sepuasnya</h3>
+                <p><strong>Hanya Rp 450Rb/Jam!</strong> Paket hemat <i>unlimited print</i> per jam untuk acaramu. Dokumentasikan kebahagiaan dengan kualitas cetak premium kami.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Melayani Seluruh Jabodetabek</h3>
+                <p>Di manapun lokasimu di area Jabodetabek, kru SnapTime siap hadir memeriahkan acara Anda dengan pelayanan yang cepat dan interaktif.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Keseruan Acara Makin Nyata</h3>
+                <p>Jadwal cepat terisi! Booking sekarang dan nikmati keseruannya. Kami siap menjadi bagian dari memori tak terlupakan Anda.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ID "pose" biarkan di sini agar navigasi dari menu atas bisa scroll ke sini -->
+    <section class="story-section" style="background-color: #fff;" id="pose">
+        <h2>Pilihan Frame & Pose Suka-Suka</h2>
+        <div class="pose-grid">
+            <div class="pose-card">
+                <h3>Elegan Dalam Satu Pose</h3>
+                <p>Fokus pada pesona utama dengan templat klasik tunggal. Cocok untuk acara formal, pernikahan, atau foto elegan yang tak lekang oleh waktu.</p>
+            </div>
+            <div class="pose-card">
+                <h3>Double Fun, Double Pose</h3>
+                <p>Abadikan interaksi ceria dengan dua gaya berbeda seketika. Pas untuk foto bersama sahabat dengan gaya bebas dan seru.</p>
+            </div>
+            <div class="pose-card">
+                <h3>Dinamis dengan Tiga Pose</h3>
+                <p>Ceritakan kisah seru dalam tiga frame estetis gaya Y2K. Jadikan setiap jepretan sebagai alur cerita acaramu yang menyenangkan.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking-section" id="booking">
+        <div class="booking-container">
+            <h2>Formulir Reservasi SnapTime</h2>
+            
+            <div id="bookingDiv">
+                <div class="form-group">
+                    <label for="nama">Nama Pemesan</label>
+                    <input type="text" id="nama" placeholder="Masukkan nama lengkap Anda">
+                </div>
+                
+                <div class="form-group">
+                    <label for="acara">Jenis Acara</label>
+                    <input type="text" id="acara" placeholder="Contoh: Pernikahan, Ulang Tahun, Pensi, dll">
+                </div>
+
+                <div class="form-group">
+                    <label for="waktu">Tanggal & Jam Acara</label>
+                    <input type="datetime-local" id="waktu">
+                </div>
+
+                <div class="form-group">
+                    <label for="lokasi">Lokasi Acara (Area Jabodetabek)</label>
+                    <input type="text" id="lokasi" placeholder="Masukkan alamat lengkap atau nama gedung">
+                </div>
+
+                <div class="form-group">
+                    <label for="durasi">Durasi Sewa (Rp 450.000 / Jam)</label>
+                    <select id="durasi">
+                        <option value="" disabled selected>Pilih durasi sewa</option>
+                        <option value="1">1 Jam - Rp 450.000</option>
+                        <option value="2">2 Jam - Rp 900.000</option>
+                        <option value="3">3 Jam - Rp 1.350.000</option>
+                        <option value="4">4 Jam - Rp 1.800.000</option>
+                        <option value="5">5 Jam+ (Hubungi Kami)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <!-- ID diganti menjadi pilihanPose agar tidak bentrok dengan ID Section pose di atas -->
+                    <label for="pilihanPose">Pilihan Cetak Pose</label>
+                    <select id="pilihanPose">
+                        <option value="" disabled selected>Pilih gaya frame</option>
+                        <option value="1 Pose">Elegan (1 Pose)</option>
+                        <option value="2 Pose">Double Fun (2 Pose)</option>
+                        <option value="3 Pose">Dinamis (3 Pose)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tujuan">Tujuan Menghubungi</label>
+                    <select id="tujuan">
+                        <option value="" disabled selected>Pilih salah satu...</option>
+                        <option value="tanya">Tanya-tanya dulu</option>
+                        <option value="pesan">Langsung pesan</option>
+                    </select>
+                </div>
+
+                <button type="button" onclick="kirimKeWhatsApp()" class="btn" style="width: 100%; margin-top: 10px; font-size: 1.2rem;">Kirim Pesan ke WhatsApp</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3>SnapTime Photobooth</h3>
+        <div class="contact-info">
+            <p>📍 Area Layanan: Jabodetabek</p>
+            <p>📷 Instagram: <a href="https://instagram.com/snaptime.id" target="_blank">@snaptime.id</a></p>
+            <p>💬 WhatsApp: <a href="https://wa.me/6289526543894" target="_blank">+62 895-2654-3894</a></p>
+        </div>
+        <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">&copy; 2024 SnapTime Photobooth. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        function kirimKeWhatsApp() {
+            const nama = document.getElementById('nama').value.trim();
+            const acara = document.getElementById('acara').value.trim();
+            const waktuInput = document.getElementById('waktu').value.trim();
+            const lokasi = document.getElementById('lokasi').value.trim();
+            const durasi = document.getElementById('durasi').value;
+            
+            // Sekarang mengambil data dengan ID pilihanPose yang sudah unik
+            const pose = document.getElementById('pilihanPose').value;
+            
+            const tujuan = document.getElementById('tujuan').value;
+
+            if (nama === "" || acara === "" || waktuInput === "" || lokasi === "" || durasi === "" || pose === "" || tujuan === "") {
+                alert("Mohon isi semua data di formulir terlebih dahulu.");
+                return;
+            }
+
+            let waktuFormatted = waktuInput;
+            if(waktuInput.includes('T')) {
+                const bagian = waktuInput.split('T');
+                waktuFormatted = bagian[0] + ' Jam ' + bagian[1];
+            }
+
+            let kalimatTerakhir = "";
+            if (tujuan === "tanya") {
+                kalimatTerakhir = "Boleh tanya dulu kak?";
+            } else if (tujuan === "pesan") {
+                kalimatTerakhir = "Apakah kosong kak?";
+            }
+
+            const teksPesan = `Halo! Saya ${nama} saya ingin booking ${pose}, untuk acara ${acara}.\n\n*Detail Booking:*\n📅 Waktu: ${waktuFormatted}\n📍 Lokasi: ${lokasi}\n⏳ Durasi: ${durasi} Jam\n\n${kalimatTerakhir}`;
+
+            const nomorWA = "6289526543894"; 
+            
+            const urlWA = `https://wa.me/${nomorWA}?text=${encodeURIComponent(teksPesan)}`;
+            window.location.href = urlWA;
+        }
+    </script>
+</body>
+</html>
